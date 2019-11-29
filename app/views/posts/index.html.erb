@@ -1,0 +1,7 @@
+<h1>Posts</h1>
+<h2><%=link_to("create a new post", post_path("new"))%> </h2>
+<%@posts.all.each do |post|%>
+    <div>
+        <%=link_to(post.title, post_path(post.id))%>
+    </div>
+<%end%>

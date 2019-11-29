@@ -1,0 +1,9 @@
+<h1>All the destinations: </h1>
+
+<ul>
+    <%@destinations.each do |destination| %>
+    <div>
+        <%=link_to(destination.name, destination_path(destination.id))%>
+    </div>
+    <%end%>
+</ul>

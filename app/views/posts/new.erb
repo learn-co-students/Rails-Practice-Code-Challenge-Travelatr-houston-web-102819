@@ -1,0 +1,23 @@
+<%=form_with({model: Post.new}) do |form|%>
+
+    <div>
+        <label>title:</label>
+        <%=form.text_field(:title)%>
+    </div>
+
+    <div>
+        <label>content:</label>
+        <%=form.text_area(:content)%>
+    </div>
+
+    <div>
+        <label>blogger</label>
+        <%=collection_select(:post, :blogger_id, @bloggers, :id, :name)%>
+    </div>
+
+    <div>
+        <label>destination</label>
+        <%=collection_select(:post, :destination_id, @destinations, :id, :name)%>
+    </div>
+    <%=form.submit%>
+<%end%>

@@ -1,0 +1,13 @@
+<h1><%=@destination.name%></h1>
+<h2>The 5 last posts for this destination: </h2>
+<% @last_5_posts.each do |post| %>
+    <div>
+        <%=link_to(post.title, post_path(post.id))%>
+    </div>
+<%end%>
+
+<h2>Post with most likes written about this destination</h2>
+<%=link_to(@post_with_most_likes.title, post_path(@post_with_most_likes.id))%>
+
+<h2>average age of bloggers who have written about this destination = <%=@avg_age%></h2>
+

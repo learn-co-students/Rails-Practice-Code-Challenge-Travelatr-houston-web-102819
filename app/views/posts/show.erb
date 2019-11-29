@@ -1,0 +1,7 @@
+<h1><%=@post.title%></h1>
+<p><%=@post.content%></p>
+<%=@post.likes%>
+<%=form_with({model: @post}) do |form|%>
+    <%=form.submit("like")%>
+<%end%>
+<%=link_to(@post.blogger.name, blogger_path(@post.blogger.id))%>
